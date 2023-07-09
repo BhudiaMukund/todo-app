@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
+}
+
+:root {
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background-1: hsl(192, 100%, 67%);
+  --Check-Background-2: hsl(280, 87%, 65%);
+
+  --Background: hsl(235, 21%, 11%);
+  --Element-Background: hsl(235, 24%, 19%);
+  --Complete-Text: hsl(237, 14%, 26%);
+  --Text-Hover: hsl(236, 33%, 92%);
+  --Footer-Text: hsl(233, 14%, 35%);
+  --List-Text: hsl(234, 39%, 85%);
+  --Placeholder: hsl(234, 11%, 52%);
+}
+body.light {
+  --Background: hsl(236, 33%, 92%);
+  --Element-Background: hsl(0, 0%, 98%);
+  --Complete-Text: hsl(233, 11%, 84%);
+  --Text-Hover: hsl(235, 19%, 35%);
+  --Footer-Text: hsl(236, 9%, 61%);
+  --List-Text: hsl(235, 19%, 35%);
+  /* --Placeholder: hsl(234, 11%, 52%); */
+}
+
+body {
+  background: var(--Background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Josefin Sans";
+  overflow-x: hidden;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+.list-container ul {
+  scrollbar-width: thin;
+  scrollbar-color: var(--Bright-Blue) var(--Footer-Text);
+}
+
+body.light .list-container ul {
+  scrollbar-color: var(--Check-Background-2) var(--Footer-Text);
+}
+
+/* Chrome, Edge, and Safari */
+.list-container ul::-webkit-scrollbar {
+  width: 5px;
+}
+
+.list-container ul::-webkit-scrollbar-track {
+  background: var(--Footer-Text);
+  border-radius: 15px;
+}
+
+.list-container ul::-webkit-scrollbar-thumb {
+  background-color: var(--Bright-Blue);
+  border-radius: 24px;
+}
+
+body.light .list-container ul::-webkit-scrollbar-thumb {
+  background-color: var(--Check-Background-2);
+}
+
+body.light .list-container ul::-webkit-scrollbar-track {
+  background: hsl(280, 87%, 90%);
+}
